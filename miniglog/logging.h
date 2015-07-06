@@ -144,7 +144,7 @@ extern std::set<LogSink *> log_sinks_global;
 // Added by chachi - a runtime global maximum log level. Defined in logging.cc
 extern int log_severity_global;
 
-inline void InitGoogleLogging(char */*argv*/) {
+inline void InitGoogleLogging(const char */*argv*/) {
   // Do nothing; this is ignored.
 }
 
@@ -155,6 +155,13 @@ inline void AddLogSink(LogSink *sink) {
 }
 inline void RemoveLogSink(LogSink *sink) {
   log_sinks_global.erase(sink);
+}
+
+// Returns a set of existing temporary directories, which will be a
+// subset of the directories returned by GetLogginDirectories().
+// Thread-safe.
+inline void GetExistingTempDirectories(std::vector<std::string>* /*list*/) {
+  // Do nothing; this is ignored.
 }
 
 }  // namespace google
