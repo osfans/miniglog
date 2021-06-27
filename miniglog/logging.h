@@ -113,6 +113,24 @@ const int INFO    =  0;
 
 // ------------------------- Glog compatibility ------------------------------
 
+namespace fLS {
+
+// Ignored, log level is always INFO
+extern std::string& FLAGS_log_dir;
+
+}
+using namespace fLS;
+
+namespace fLI {
+
+// Ignored
+extern int32_t FLAGS_logfile_mode;
+// Ignored
+extern int32_t FLAGS_minloglevel;
+
+}
+using namespace fLI;
+
 namespace google {
 
 typedef int LogSeverity;
