@@ -30,6 +30,15 @@
 
 #include "./logging.h"
 
+namespace fLS {
+
+std::string FLAGS_log_dir_buf("");
+std::string& FLAGS_log_dir = FLAGS_log_dir_buf;
+
+}
+int32_t fLI::FLAGS_logfile_mode;
+int32_t fLI::FLAGS_minloglevel;
+
 namespace google {
 
 // This is the set of log sinks. This must be in a separate library to ensure
